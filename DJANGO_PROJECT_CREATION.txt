@@ -1,0 +1,67 @@
+Django project creation steps using pycharm
+--------------------------------------------------------
+-> Open pycharm IDE -> file -> new project(sample)
+-> Provide a project name in place of pythonProject1 in first link.
+-> A project will be created with the name you provided.
+-> If you don't have django installed in your pc, install it by following below steps
+           - Go to terminal in pycharm IDE.
+           - Enter this command : pip install Django
+           - This will install Django 
+-> Now we need to create a django project.
+-> The following command is used to create the django project:
+          - terminal : django-admin startproject myProject
+-> A project will be created with an name of myProject.
+-> Make sure to be in the project directory:
+           - terminal : cd myProject
+-> Now we need to create an app in our project:
+           - terminal : python manage.py startapp myApp
+-> An app will be created as myApp
+-> You can verify the successfull creation of app by typing the following command;
+          - terminal : python manage.py runserver
+-> Open the link you will get in terminal and you will be redirected to successfull page of django.
+          - browser : http://127.0.0.1:8000/ 
+-> Django project is created successfully.
+-> Now we can see our directory as follows:
+         - sample
+            - Lib
+            - sampleproject
+            - myApp
+                > migrations
+                    init.py
+	admin.py
+	apps.py
+	models.py
+	tests.py
+	views.py
+           - sampleproject
+	init.py
+	asgi.py
+	settings.py
+	urls.py
+	wsgi.py
+-> Now we need to configure some changes to work with django projects.
+
+Changes Recommended 
+------------------------------
+1. settings.py :
+=> ALLOWED_HOSTS = ['*']
+
+2.settings.py :
+=> INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'myApp',
+]
+--> add app name 'myApp' to installed_apps
+
+3.sampleproject/urls.py :
+=> urlpatterns = [
+    path('admin/', admin.site.urls),
+    path(' ',include('myApp.urls'))
+]
+
+--> add path(' ',include('myApp.urls'))
