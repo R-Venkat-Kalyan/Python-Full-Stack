@@ -33,12 +33,15 @@ Django project creation steps using pycharm
 	models.py
 	tests.py
 	views.py
+	urls.py
            - sampleproject
 	init.py
 	asgi.py
 	settings.py
 	urls.py
 	wsgi.py
+
+-> There will be no urls.py in myApp we need to create one to add our urls.
 -> Now we need to configure some changes to work with django projects.
 
 Changes Recommended 
